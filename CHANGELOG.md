@@ -1,3 +1,8 @@
+# v1.0.0 (2026-11-21)
+
+## ✨ New Features
+- [`41049cb`](https://github.com/fredrkl/dotnet-11-news/commit/41049cb)  Before union types
+
 # [v1.3.0](https://github.com/fredrkl/template-base/compare/v1.2.0...v1.3.0) (2025-08-03)
 
 ## ✨ New Features
