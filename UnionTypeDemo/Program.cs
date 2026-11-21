@@ -1,9 +1,6 @@
 ﻿using UnionTypeDemo.interfaceway;
 
-Console.WriteLine("Hello, World!");
-
-// Old interface way
-
+// OLD INTERFACE WAY
 ITapResult GetTap()
 {
    return new TapAccepted("1234", "StationA");
@@ -26,4 +23,10 @@ else if(tapResult is CardUnreadable)
 else if(tapResult is UnsupportedCard unsupported)
 {
     Console.WriteLine($"Unsupported card type: {unsupported.CardType}");
+}else
+{
+    Console.WriteLine("Unknown tap result");
 }
+
+// NEW UNION TYPE WAY
+
