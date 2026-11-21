@@ -1,3 +1,8 @@
+# [v1.1.0](https://github.com/fredrkl/dotnet-11-news/compare/v1.0.0...v1.1.0) (2026-11-21)
+
+## ✨ New Features
+- [`0a1a510`](https://github.com/fredrkl/dotnet-11-news/commit/0a1a510)  Old interface way
+
 # v1.0.0 (2026-11-21)
 
 ## ✨ New Features
