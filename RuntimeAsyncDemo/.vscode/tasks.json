@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build classic async",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["build", "${workspaceFolder}/RuntimeAsyncDemo.csproj", "--configuration", "Debug"],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build runtime async",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["build", "${workspaceFolder}/RuntimeAsyncDemo.csproj", "--configuration", "RuntimeAsync"],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

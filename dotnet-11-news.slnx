@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ClaimApiDemo/ClaimApiDemo.csproj" />
+  <Project Path="RuntimeAsyncDemo/RuntimeAsyncDemo.csproj" />
   <Project Path="UnionTypeDemo/UnionTypeDemo.csproj" />
 </Solution>

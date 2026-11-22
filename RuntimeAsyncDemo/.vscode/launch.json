@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Classic async",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build classic async",
+      "program": "${workspaceFolder}/bin/Debug/net11.0/RuntimeAsyncDemo.dll",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Runtime Async",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build runtime async",
+      "program": "${workspaceFolder}/bin/RuntimeAsync/net11.0/RuntimeAsyncDemo.dll",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

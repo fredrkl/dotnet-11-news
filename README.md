@@ -24,3 +24,8 @@ We can now use `AsyncValidationAttribute` to perform asynchronous validation in
 ASP.NET Core. This allows us to perform validation that requires I/O, such as
 checking a database or calling an external service, without blocking the
 request thread.
+
+## Runtime Async in .NET 11
+
+See [Runtime Async demo](RuntimeAsyncDemo/README.md) to compare live stack
+traces and debugger call stacks with the feature off and on.
