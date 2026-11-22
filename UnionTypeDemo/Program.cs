@@ -25,7 +25,7 @@ Console.WriteLine($"The interface way result: {result}");
 UnionWay.TapResult GetUnionTap()
 {
     return new UnionWay.TapAccepted("1234", "StationA");
-//   return new CardMistake();
+//   return new UnionWay.CardMistake();
 }
 
 result = GetUnionTap() switch
