@@ -17,3 +17,10 @@ different types that implement the union type, so it can warn us if we forget
 to handle a new type.
 
 See [Claim API demo](ClaimApiDemo/README.md) for unions in HTTP JSON responses.
+
+## Async validation in .NET 11
+
+We can now use `AsyncValidationAttribute` to perform asynchronous validation in
+ASP.NET Core. This allows us to perform validation that requires I/O, such as
+checking a database or calling an external service, without blocking the
+request thread.
