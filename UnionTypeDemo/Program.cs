@@ -36,8 +36,7 @@ TapResult GetUnionTap()
     return new UnionTypeDemo.UnionWay.TapAccepted("1234", "StationA");
 }
 
-var tap = GetUnionTap();
-var result = tap switch
+var _ = GetUnionTap() switch
 {
     UnionTypeDemo.UnionWay.TapAccepted tapAccepted =>
         $"Tap accepted for card {tapAccepted.CardId} at station {tapAccepted.StationId}",
