@@ -1,5 +1,5 @@
 ﻿using UnionTypeDemo.Interfaceway;
-using UnionTypeDemo.UnionWay;
+using UnionWay = UnionTypeDemo.UnionWay;
 
 // OLD INTERFACE WAY
 ITapResult GetTap()
@@ -10,11 +10,11 @@ ITapResult GetTap()
 
 var result = GetTap() switch
 {
-    UnionTypeDemo.Interfaceway.TapAccepted tapAccepted =>
+    TapAccepted tapAccepted =>
         $"Tap accepted for card {tapAccepted.CardId} at station {tapAccepted.StationId}",
-    UnionTypeDemo.Interfaceway.CardBlocked cardBlocked => $"Card {cardBlocked.CardId} is blocked",
-    UnionTypeDemo.Interfaceway.CardUnreadable => "Card is unreadable",
-    UnionTypeDemo.Interfaceway.UnsupportedCard unsupported => $"Unsupported card type: {unsupported.CardType}",
+    CardBlocked cardBlocked => $"Card {cardBlocked.CardId} is blocked",
+    CardUnreadable => "Card is unreadable",
+    UnsupportedCard unsupported => $"Unsupported card type: {unsupported.CardType}",
     _ => "Unknown tap result"
 };
 
@@ -22,18 +22,18 @@ Console.WriteLine($"The interface way result: {result}");
 
 
 // NEW UNION TYPE WAY
-TapResult GetUnionTap()
+UnionWay.TapResult GetUnionTap()
 {
-    return new UnionTypeDemo.UnionWay.TapAccepted("1234", "StationA");
+    return new UnionWay.TapAccepted("1234", "StationA");
 }
 
 result = GetUnionTap() switch
 {
-    UnionTypeDemo.UnionWay.TapAccepted tapAccepted =>
+    UnionWay.TapAccepted tapAccepted =>
         $"Tap accepted for card {tapAccepted.CardId} at station {tapAccepted.StationId}",
-    UnionTypeDemo.UnionWay.CardBlocked cardBlocked => $"Card {cardBlocked.CardId} is blocked",
-    UnionTypeDemo.UnionWay.CardUnreadable => "Card is unreadable",
-    UnionTypeDemo.UnionWay.UnsupportedCard unsupported => $"Unsupported card type: {unsupported.CardType}",
+    UnionWay.CardBlocked cardBlocked => $"Card {cardBlocked.CardId} is blocked",
+    UnionWay.CardUnreadable => "Card is unreadable",
+    UnionWay.UnsupportedCard unsupported => $"Unsupported card type: {unsupported.CardType}",
 };
 
 Console.WriteLine($"The union type way result: {result}");

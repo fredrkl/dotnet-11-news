@@ -1,7 +1,5 @@
 # Dotnew news
 
-## Install .NET 11
-
 ## Union types in C# 15
 
 What if we now introduced a new TapResult type in the interface way? For
