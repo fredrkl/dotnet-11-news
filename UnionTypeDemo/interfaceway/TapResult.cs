@@ -10,8 +10,8 @@ public record CardBlocked(string CardId)
 public record CardUnreadable
     : ITapResult;
 
-public record CardMistake
-    : ITapResult;
+//public record CardMistake
+//    : ITapResult;
 
 public record UnsupportedCard(string CardType)
     : ITapResult;

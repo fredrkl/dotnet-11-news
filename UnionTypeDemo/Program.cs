@@ -4,8 +4,8 @@ using UnionWay = UnionTypeDemo.UnionWay;
 // OLD INTERFACE WAY
 ITapResult GetTap()
 {
-//   return new TapAccepted("1234", "StationA");
-   return new CardMistake();
+   return new TapAccepted("1234", "StationA");
+//   return new CardMistake();
 }
 
 var result = GetTap() switch
@@ -25,6 +25,7 @@ Console.WriteLine($"The interface way result: {result}");
 UnionWay.TapResult GetUnionTap()
 {
     return new UnionWay.TapAccepted("1234", "StationA");
+//   return new CardMistake();
 }
 
 result = GetUnionTap() switch
