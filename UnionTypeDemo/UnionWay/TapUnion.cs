@@ -5,7 +5,7 @@ public record CardBlocked(string CardId);
 public record CardUnreadable;
 public record UnsupportedCard(string CardType);
 
-public union TapResult(
+public readonly union TapResult(
     TapAccepted,
     CardBlocked,
     CardUnreadable,

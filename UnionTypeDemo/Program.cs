@@ -8,7 +8,7 @@ ITapResult GetTap()
    return new CardMistake();
 }
 
-_ = GetTap() switch
+var result = GetTap() switch
 {
     UnionTypeDemo.Interfaceway.TapAccepted tapAccepted =>
         $"Tap accepted for card {tapAccepted.CardId} at station {tapAccepted.StationId}",
@@ -18,6 +18,8 @@ _ = GetTap() switch
     _ => "Unknown tap result"
 };
 
+Console.WriteLine($"The interface way result: {result}");
+
 
 // NEW UNION TYPE WAY
 TapResult GetUnionTap()
@@ -25,7 +27,7 @@ TapResult GetUnionTap()
     return new UnionTypeDemo.UnionWay.TapAccepted("1234", "StationA");
 }
 
-_ = GetUnionTap() switch
+result = GetUnionTap() switch
 {
     UnionTypeDemo.UnionWay.TapAccepted tapAccepted =>
         $"Tap accepted for card {tapAccepted.CardId} at station {tapAccepted.StationId}",
@@ -33,3 +35,5 @@ _ = GetUnionTap() switch
     UnionTypeDemo.UnionWay.CardUnreadable => "Card is unreadable",
     UnionTypeDemo.UnionWay.UnsupportedCard unsupported => $"Unsupported card type: {unsupported.CardType}",
 };
+
+Console.WriteLine($"The union type way result: {result}");
