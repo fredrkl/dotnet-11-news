@@ -1,9 +1,10 @@
-﻿using UnionTypeDemo.interfaceway;
+﻿using UnionTypeDemo.Interfaceway;
 
 // OLD INTERFACE WAY
 ITapResult GetTap()
 {
-   return new TapAccepted("1234", "StationA");
+//   return new TapAccepted("1234", "StationA");
+   return new CardMistake();
 }
 
 var tapResult = GetTap();
