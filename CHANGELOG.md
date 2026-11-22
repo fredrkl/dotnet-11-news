@@ -1,3 +1,8 @@
+# [v1.2.0](https://github.com/fredrkl/dotnet-11-news/compare/v1.1.0...v1.2.0) (2026-11-22)
+
+## ✨ New Features
+- [`36afa14`](https://github.com/fredrkl/dotnet-11-news/commit/36afa14)  Interface demo
+
 # [v1.1.0](https://github.com/fredrkl/dotnet-11-news/compare/v1.0.0...v1.1.0) (2026-11-21)
 
 ## ✨ New Features
