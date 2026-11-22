@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
+builder.Services.AddValidation();
+builder.Services.AddSingleton<PolicyService>();
 
 var app = builder.Build();
 app.MapOpenApi();
@@ -22,6 +24,10 @@ app.MapGet("/claims/{id:int}", Results<Ok<ClaimStatus>, NotFound> (int id) =>
 
     return TypedResults.NotFound();
 });
+
+// Validation runs before this handler; no claim is saved by this demo.
+app.MapPost("/claims/validate", (ClaimValidationRequest request) =>
+    TypedResults.Ok(new { message = "Claim validation succeeded." }));
 
 app.Run();
 
