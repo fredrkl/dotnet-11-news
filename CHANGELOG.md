@@ -1,3 +1,8 @@
+# [v1.3.0](https://github.com/fredrkl/dotnet-11-news/compare/v1.2.0...v1.3.0) (2026-11-22)
+
+## ✨ New Features
+- [`617f576`](https://github.com/fredrkl/dotnet-11-news/commit/617f576)  Union example
+
 # [v1.2.0](https://github.com/fredrkl/dotnet-11-news/compare/v1.1.0...v1.2.0) (2026-11-22)
 
 ## ✨ New Features
