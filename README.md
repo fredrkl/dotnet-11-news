@@ -15,3 +15,5 @@ interface, so it cannot warn us if we forget to handle a new type.
 With union types we defined a closed set of types. The compiler knows all the
 different types that implement the union type, so it can warn us if we forget
 to handle a new type.
+
+See [Claim API demo](ClaimApiDemo/README.md) for unions in HTTP JSON responses.
