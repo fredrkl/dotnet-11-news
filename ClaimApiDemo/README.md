@@ -53,3 +53,27 @@ The known policy returns `200 OK`. The other requests return `400 Bad Request`
 with validation details. `[Required]` handles missing or blank values, while
 `[KnownPolicy]` performs the async lookup. The delay simulates I/O; a real
 service would query a database or remote API instead.
+
+## Server-sent events and OpenAPI 3.2
+
+`GET /todos/stream` streams ten todo items, approximately one per second. Each
+item is sent as a `todo` event with an ID and a JSON payload. Try it with:
+
+```sh
+curl -N http://localhost:5000/todos/stream
+```
+
+An event looks like this (the order of SSE fields may vary):
+
+```text
+event: todo
+id: 1
+data: {"id":1,"title":"Todo 1","isCompleted":false}
+
+```
+
+In `/openapi/v1.json`, the `text/event-stream` response uses OpenAPI 3.2's
+`itemSchema` to describe each event. Its `data` property references the `Todo`
+schema, and the optional `event` and `id` properties describe SSE metadata.
+The schema describes a parsed event; the actual response is SSE text, not a
+JSON object or array.

@@ -1,3 +1,4 @@
+using System.Net.ServerSentEvents;
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -34,12 +35,16 @@ app.MapGet("/todos/stream", (CancellationToken ct) =>
     TypedResults.ServerSentEvents(GetTodosAsync(ct)))
     .WithName("StreamTodos");
 
-static async IAsyncEnumerable<string> GetTodosAsync(
+static async IAsyncEnumerable<SseItem<Todo>> GetTodosAsync(
     [EnumeratorCancellation] CancellationToken ct = default)
 {
     for (int i = 0; i < 10; i++)
     {
-        yield return $"Todo {i + 1}";
+        var todo = new Todo(i + 1, $"Todo {i + 1}", IsCompleted: false);
+        yield return new SseItem<Todo>(todo, eventType: "todo")
+        {
+            EventId = todo.Id.ToString()
+        };
         await Task.Delay(1000, ct);
     }
 }
@@ -48,5 +53,6 @@ app.Run();
 
 public record ClaimApproved(decimal PayoutAmount);
 public record ClaimNeedsReview(string Reason);
+public record Todo(int Id, string Title, bool IsCompleted);
 
 public union ClaimStatus(ClaimApproved, ClaimNeedsReview);
