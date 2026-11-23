@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,20 @@ app.MapGet("/claims/{id:int}", Results<Ok<ClaimStatus>, NotFound> (int id) =>
 // Validation runs before this handler; no claim is saved by this demo.
 app.MapPost("/claims/validate", (ClaimValidationRequest request) =>
     TypedResults.Ok(new { message = "Claim validation succeeded." }));
+
+app.MapGet("/todos/stream", (CancellationToken ct) =>
+    TypedResults.ServerSentEvents(GetTodosAsync(ct)))
+    .WithName("StreamTodos");
+
+static async IAsyncEnumerable<string> GetTodosAsync(
+    [EnumeratorCancellation] CancellationToken ct = default)
+{
+    for (int i = 0; i < 10; i++)
+    {
+        yield return $"Todo {i + 1}";
+        await Task.Delay(1000, ct);
+    }
+}
 
 app.Run();
 
