@@ -13,19 +13,19 @@ public static class ClaimProcessor
 {
     public static async Task ProcessClaimAsync()
     {
-        await Task.CompletedTask;
+        await Task.CompletedTask; // Simulate some asynchronous work. Force async state machine behavior
         await CheckCoverageAsync();
     }
 
     private static async Task CheckCoverageAsync()
     {
-        await Task.CompletedTask;
+        await Task.CompletedTask; // Simulate some asynchronous work. Force async state machine behavior
         await RecordDecisionAsync();
     }
 
     private static async Task RecordDecisionAsync()
     {
-        await Task.CompletedTask;
+        await Task.CompletedTask; // Simulate some asynchronous work. Force async state machine behavior
 
         // Set a breakpoint on the next line and inspect the debugger's Call Stack.
         Console.WriteLine(new StackTrace(fNeedFileInfo: true));
