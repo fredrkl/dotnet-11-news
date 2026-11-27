@@ -18,6 +18,8 @@ different types in the union type, and warn us if we forget to handle one.
 See [Claim API demo](./ClaimApiDemo/README.md) for unions in HTTP JSON
 responses.
 
+## Closed hierarchies
+
 ## Async validation in .NET 11
 
 We can now use

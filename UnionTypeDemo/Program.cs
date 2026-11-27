@@ -20,7 +20,6 @@ var result = GetTap() switch
 
 Console.WriteLine($"The interface way result: {result}");
 
-
 // NEW UNION TYPE WAY
 UnionWay.TapResult GetUnionTap()
 {
@@ -38,3 +37,6 @@ result = GetUnionTap() switch
 };
 
 Console.WriteLine($"The union type way result: {result}");
+
+// CLOSED HIERARCHIE DEMO
+//var vehicle = new ClosedHierarchies.Car(200, "Toyota", "Camry", 2020); // Does not work wince Car is sealed and cannot be used outside of the ClosedHierarchies namespace. If we make the Car record public, then we get warning about the base class being less accessible than the derived class.
