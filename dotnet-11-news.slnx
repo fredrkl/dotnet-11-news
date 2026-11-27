@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="ClaimApiDemo/ClaimApiDemo.csproj" />
   <Project Path="ClosedHierarchies/ClosedHierarchies.csproj" />
+  <Project Path="MiscDemos/MiscDemos.csproj" />
   <Project Path="RuntimeAsyncDemo/RuntimeAsyncDemo.csproj" />
   <Project Path="UnionTypeDemo/UnionTypeDemo.csproj" />
 </Solution>
