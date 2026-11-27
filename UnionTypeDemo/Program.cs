@@ -39,4 +39,8 @@ result = GetUnionTap() switch
 Console.WriteLine($"The union type way result: {result}");
 
 // CLOSED HIERARCHIE DEMO
-//var vehicle = new ClosedHierarchies.Car(200, "Toyota", "Camry", 2020); // Does not work wince Car is sealed and cannot be used outside of the ClosedHierarchies namespace. If we make the Car record public, then we get warning about the base class being less accessible than the derived class.
+// var vehicle = new ClosedHierarchies.Car(200, "Toyota", "Camry", 2020); // Does not work wince Car is sealed and cannot be used outside of the ClosedHierarchies namespace. If we make the Car record public, then we get warning about the base class being less accessible than the derived class.
+namespace UnionTypeDemo{
+    // sealed record Fly(int Numberofseets, string Make, string Model, int Year) : ClosedHierarchies.Vehicle(Make, Model, Year); // This does not work since Vehicle is closed and cannot be used outside of the ClosedHierarchies namespace. If we make the Vehicle record public, then we get warning about the base class being less accessible than the derived class.
+    record SpeedBoat(int Horsepower, string Make,string Model, int Year): ClosedHierarchies.Boat(Horsepower, Make,Model, Year);
+}
