@@ -11,15 +11,24 @@ HashSet<string> models = [
     "Chevrolet Camaro"
 ];
 
+List<string> randomstrings = [
+    "Orange",
+    "Apple",
+    "Banana",
+    "Grape",
+    "Mango"
+];
+
 Console.WriteLine($"Unique car models (case-insensitive): {models.Count}");
 
 // Labeled break and continue
 search: foreach (var model in models)
 {
-    // Pretend we are going through a second large list for each model and we want to break out of the outer loop if we find a match.
-    if(model.StartsWith("C", StringComparison.OrdinalIgnoreCase))
+    foreach (var randomstring in randomstrings)
     {
-        Console.WriteLine($"Found a model starting with 'C': {model}");
-        break search; // Labeled break
+        if (randomstring.Equals("Banana", StringComparison.OrdinalIgnoreCase))
+        {
+            break search; // Labeled break to exit the outer loop
+        }
     }
 }
